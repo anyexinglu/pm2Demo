@@ -1,5 +1,5 @@
 module.exports = function pm2Monitor() {
-  const globalPM2 = require("pm2");
+  const globalPM2 = require("import-global")("pm2");
   const prefix = "pm2监控";
   const logger = msg => {
     console.log(

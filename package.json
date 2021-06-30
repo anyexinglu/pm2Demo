@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "import-global": "^0.1.0"
+  }
+}
