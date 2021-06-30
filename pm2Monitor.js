@@ -1,11 +1,7 @@
+const logger = require("./logger");
+
 module.exports = function pm2Monitor() {
   const globalPM2 = require("import-global")("pm2");
-  const prefix = "pm2监控";
-  const logger = msg => {
-    console.log(
-      JSON.stringify({ level: "error", msg: `${prefix}输出-${msg}` })
-    );
-  };
 
   globalPM2.connect((ex, meta) => {
     // https://pm2.io/docs/runtime/reference/pm2-programmatic/#programmatic-api

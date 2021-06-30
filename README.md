@@ -26,9 +26,18 @@ Server running at http://127.0.0.1:8888/
 
 ## manage
 
+增加进程数：
+
 ```
-$ pm2 restart app_name
-$ pm2 reload app_name
-$ pm2 stop app_name
-$ pm2 delete app_name
+pm2 scale app +3   // # Scales `app` up by 3 workers
+```
+
+其他指令：
+
+```
+pm2 monit // 监控，可以看到实例监控信息
+pm2 restart app_name
+pm2 reload app_name
+pm2 stop app_name
+pm2 delete app_name
 ```
