@@ -1,7 +1,9 @@
 var http = require("http");
+var pm2Monitor = require("./pm2Monitor");
 
 http
   .createServer(function (request, response) {
+    pm2Monitor();
     // 发送 HTTP 头部
     // HTTP 状态值: 200 : OK
     // 内容类型: text/plain
