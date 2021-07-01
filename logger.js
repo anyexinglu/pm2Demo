@@ -1,7 +1,7 @@
 const fs = require("fs");
 const prefix = "pm2监控";
 
-const loggerFileName = "log.txt";
+const loggerFileName = `log${Date.now()}.txt`;
 const logger = msg => {
   let info = JSON.stringify({ level: "error", msg: `${prefix}输出-${msg}` });
   console.log(info);

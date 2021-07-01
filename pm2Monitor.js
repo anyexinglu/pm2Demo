@@ -28,6 +28,7 @@ module.exports = function pm2Monitor() {
           `捕捉到未知的异常。${
             guessMsg ? "可能的错误信息：" + guessMsg : ""
           } 完整信息：` + JSON.stringify(data);
+        console.log("...exception bus", bus);
         logger(msg);
       });
 
@@ -46,6 +47,8 @@ module.exports = function pm2Monitor() {
           const msg = `捕捉到进程退出。${JSON.stringify(
             simpleInfo
           )}，完整信息：${JSON.stringify(data)}`;
+
+          console.log("...exit bus", bus);
           logger(msg);
         } else if (event === "restart overlimit") {
           /**
